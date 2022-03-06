@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="lightblue">#E1E6FF</color>
+    <color name="purple">#856EE1</color>
+    <color name="pink">#FFD2DC</color>
+    <color name="yellow">#FFDF88</color>
+    <color name="blue">#3040C4</color>
+    <color name="lightpurple">#646CDE</color>
+    <color name="text1">#1F1351</color>
+    <color name="btn1">#5E6BDE</color>
+    <color name="header">#F0F3FF</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color">#3040C4</color>
+
 </resources>
