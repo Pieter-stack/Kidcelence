@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kidcelence">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Kidcelence">
         <activity
-            android:name=".categories"
+            android:name=".setting"
             android:exported="false" />
+        <activity
+            android:name=".points"
+            android:exported="false" />
+        <activity
+            android:name=".Questions"
+            android:exported="false" />
+        <activity
+            android:name=".categories"
+            android:exported="false"></activity>
         <activity
             android:name=".SplasScreen"
             android:exported="true">
@@ -23,7 +34,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

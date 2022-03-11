@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,32 +17,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ImageView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/shape_Profile"
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="56dp"
-        app:cardBackgroundColor="@color/blue"
-        app:cardCornerRadius="200dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/lightpurple"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_Image"
         android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginTop="-50dp"
-        app:cardBackgroundColor="@color/lightpurple"
-        app:cardCornerRadius="200dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-    </androidx.cardview.widget.CardView>
-
+        android:layout_height="60dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="140dp"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/shape_Profile"
+        app:layout_constraintTop_toTopOf="@+id/shape_Profile" />
 
     <TextView
         android:id="@+id/textView"
@@ -56,7 +53,7 @@
         android:textSize="26dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        app:layout_constraintTop_toBottomOf="@+id/btn_Image">
 
     </TextView>
 

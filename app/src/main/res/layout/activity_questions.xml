@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Questions"
+    android:background="@color/yellow">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_marginTop="304dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+       >
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton9"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="32dp"
+        app:backgroundTint="@color/lightblue"
+        app:layout_constraintBottom_toTopOf="@+id/materialButton10"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Hello"
+        android:textColor="@color/text1"
+        app:cornerRadius="10dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:backgroundTint="@color/lightpurple"
+        app:layout_constraintBottom_toTopOf="@+id/materialButton11"
+        app:layout_constraintEnd_toStartOf="@+id/materialButton9"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Hello"
+        android:textColor="@color/text1"
+        app:cornerRadius="10dp">
+
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton10"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="40dp"
+        app:backgroundTint="@color/pink"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Hello"
+        android:textColor="@color/text1"
+        app:cornerRadius="10dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButton11"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        app:backgroundTint="@color/yellow"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/materialButton10"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Hello"
+        android:textColor="@color/text1"
+        app:cornerRadius="10dp">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/cards"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ImageView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

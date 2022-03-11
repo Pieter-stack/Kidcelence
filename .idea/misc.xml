@@ -3,9 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_categories.xml" value="0.4244791666666667" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/animal.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/animalcard.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/backgroundcategory.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/ic_launcher_background.xml" value="0.229" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/maths.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/pattern.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/drawable/story.xml" value="0.2695" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_categories.xml" value="0.4" />
         <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_points.xml" value="0.4" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_questions.xml" value="0.4244791666666667" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_setting.xml" value="0.4244791666666667" />
         <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_splas_screen.xml" value="0.4244791666666667" />
+        <entry key="..\:/Users/piete/OneDrive/Documents/GitHub/kidcelence/app/src/main/res/layout/activity_testgallery.xml" value="0.4244791666666667" />
       </map>
     </option>
   </component>
