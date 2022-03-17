@@ -17,12 +17,13 @@
         app:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck">
+        tools:ignore="SpeakableTextPresentCheck"
+        android:clickable="false">
 
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton3"
+        android:id="@+id/btn_story"
         android:layout_width="134dp"
         android:layout_height="214dp"
 
@@ -37,13 +38,13 @@
         android:textStyle="bold"
         app:backgroundTint="@color/pink"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/materialButton4"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton2">
+        app:layout_constraintStart_toEndOf="@+id/btn_math"
+        app:layout_constraintTop_toBottomOf="@+id/btn_pattern">
 
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton4"
+        android:id="@+id/btn_math"
         android:layout_width="134dp"
         android:layout_height="214dp"
         android:layout_marginStart="72dp"
@@ -56,14 +57,14 @@
         android:paddingBottom="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/yellow"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_story"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton5">
+        app:layout_constraintTop_toBottomOf="@+id/btn_sound">
 
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton5"
+        android:id="@+id/btn_sound"
         android:layout_width="134dp"
         android:layout_height="214dp"
         android:layout_marginStart="72dp"
@@ -77,8 +78,8 @@
         android:paddingTop="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/lightpurple"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton4"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_story"
+        app:layout_constraintEnd_toStartOf="@+id/btn_pattern"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -88,7 +89,7 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton2"
+        android:id="@+id/btn_pattern"
         android:layout_width="134dp"
         android:layout_height="214dp"
         android:layout_marginStart="2dp"
@@ -102,9 +103,9 @@
         android:paddingTop="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/lightblue"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton3"
+        app:layout_constraintBottom_toTopOf="@+id/btn_math"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/materialButton5"
+        app:layout_constraintStart_toEndOf="@+id/btn_sound"
         app:layout_constraintTop_toTopOf="parent">
 
     </com.google.android.material.button.MaterialButton>
@@ -116,7 +117,7 @@
         android:layout_marginTop="108dp"
         android:src="@drawable/animalimg"
         android:translationZ="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/materialButton5"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sound"
         app:layout_constraintTop_toTopOf="@+id/materialButton">
 
     </ImageView>
@@ -129,9 +130,9 @@
         android:layout_marginTop="56dp"
         android:src="@drawable/patternimg"
         android:translationZ="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/materialButton2"
+        app:layout_constraintEnd_toEndOf="@+id/btn_pattern"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="@+id/materialButton2">
+        app:layout_constraintTop_toTopOf="@+id/btn_pattern">
 
     </ImageView>
 
@@ -144,10 +145,10 @@
         android:layout_marginTop="56dp"
         android:src="@drawable/mathimg"
         android:translationZ="5dp"
-        app:layout_constraintEnd_toEndOf="@+id/materialButton4"
+        app:layout_constraintEnd_toEndOf="@+id/btn_math"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/materialButton4"
-        app:layout_constraintTop_toTopOf="@+id/materialButton4">
+        app:layout_constraintStart_toStartOf="@+id/btn_math"
+        app:layout_constraintTop_toTopOf="@+id/btn_math">
 
     </ImageView>
 
@@ -159,32 +160,38 @@
         android:layout_marginTop="24dp"
         android:src="@drawable/storyimg"
         android:translationZ="5dp"
-        app:layout_constraintStart_toStartOf="@+id/materialButton3"
-        app:layout_constraintTop_toTopOf="@+id/materialButton3">
+        app:layout_constraintStart_toStartOf="@+id/btn_story"
+        app:layout_constraintTop_toTopOf="@+id/btn_story">
 
     </ImageView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_pfp"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="155dp"
         android:layout_marginTop="51dp"
-        app:cardBackgroundColor="@color/pink"
+        android:backgroundTint="@color/pink"
         app:cardCornerRadius="200dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/pink"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/circleImageView" />
 
-    </androidx.cardview.widget.CardView>
+
+
 
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Hi there Excelent John!"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pfp"
         android:textColor="@color/text1"
         android:textSize="16dp"
         android:textStyle="bold"
@@ -194,7 +201,7 @@
 
 
     <androidx.cardview.widget.CardView
-
+        android:id="@+id/cv_settings"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"

@@ -19,16 +19,19 @@
     <androidx.cardview.widget.CardView
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="184dp"
         android:backgroundTint="@color/pink"
         app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288">
 
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:id="@+id/tv_Well"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="508dp"
@@ -41,11 +44,11 @@
         android:textStyle="bold"></TextView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_score"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="560dp"
-        android:text="You just scored 100 points!"
+        android:text="5/5"
         android:textAlignment="center"
         android:textColor="@color/text1"
         android:textSize="16dp"
@@ -53,17 +56,30 @@
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
+    <TextView
+        android:id="@+id/tv_points"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="588dp"
+        android:text="You just scored 100 points!"
+        android:textAlignment="center"
+        android:textColor="@color/text1"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="40dp"
         android:padding="10dp"
-        android:text="Next Question"
+        android:text="Choose Next Category"
         android:textSize="16dp"
         app:backgroundTint="@color/lightpurple"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_score" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

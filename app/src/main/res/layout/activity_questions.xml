@@ -9,23 +9,23 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="430dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginTop="300dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-       >
+        app:layout_constraintTop_toTopOf="parent">
 
     </androidx.cardview.widget.CardView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton9"
+        android:id="@+id/btn_option2"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginEnd="42dp"
         android:layout_marginBottom="32dp"
         app:backgroundTint="@color/lightblue"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton10"
+        app:layout_constraintBottom_toTopOf="@+id/btn_option4"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Hello"
         android:textColor="@color/text1"
@@ -34,14 +34,15 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_option1"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="37dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         app:backgroundTint="@color/lightpurple"
-        app:layout_constraintBottom_toTopOf="@+id/materialButton11"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_option3"
+        app:layout_constraintEnd_toStartOf="@+id/btn_option2"
         app:layout_constraintStart_toStartOf="parent"
         android:text="Hello"
         android:textColor="@color/text1"
@@ -51,7 +52,7 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton10"
+        android:id="@+id/btn_option4"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginEnd="42dp"
@@ -66,7 +67,7 @@
     </com.google.android.material.button.MaterialButton>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButton11"
+        android:id="@+id/btn_option3"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginStart="37dp"
@@ -74,7 +75,7 @@
         android:layout_marginBottom="40dp"
         app:backgroundTint="@color/yellow"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/materialButton10"
+        app:layout_constraintEnd_toStartOf="@+id/btn_option4"
         app:layout_constraintStart_toStartOf="parent"
         android:text="Hello"
         android:textColor="@color/text1"
@@ -84,6 +85,7 @@
 
 
     <ImageView
+        android:id="@+id/iv_questionblock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -93,6 +95,56 @@
         app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
+
+
+    <ImageView
+        android:id="@+id/iv_question"
+        android:layout_width="351dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </ImageView>
+
+
+    <TextView
+        android:id="@+id/tv_questiontext"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_marginBottom="120dp"
+        android:text="Hey there! Whats your name?"
+        android:textAlignment="center"
+        android:textColor="@color/text1"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_questionblock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardView">
+
+
+    </TextView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_play"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:padding="10dp"
+        android:text="Play"
+        android:textAllCaps="false"
+        android:textSize="21sp"
+        app:cornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_questionblock"
+        app:layout_constraintEnd_toEndOf="@+id/iv_questionblock"
+        app:layout_constraintStart_toStartOf="@+id/iv_questionblock"
+        app:layout_constraintTop_toTopOf="@+id/iv_questionblock">
+
+
+    </com.google.android.material.button.MaterialButton>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,14 +3,16 @@ package com.example.kidcelence
 import android.content.Intent
 import android.media.MediaPlayer
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.kidcelence.databinding.ActivityMainBinding
+import com.example.kidcelence.models.Constant
+import java.io.File
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,8 @@ class MainActivity : AppCompatActivity() {
     private val pickImage = 100
     private var imageUri: Uri? = null
 
+
+    //on create function
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         imageView = findViewById(R.id.shape_Profile)
         button = findViewById(R.id.btn_Image)
         button.setOnClickListener {
+            // pick image from gallery
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
         }
@@ -47,28 +52,25 @@ class MainActivity : AppCompatActivity() {
 
 
         var userName: String = ""
+        var profilePic: String = ""
 
         //on btn click listener
         binding.btnSubmit.setOnClickListener {
 
-
-            // SOund plays, and also this code is for animal sound on category page so move
-            //TODO: move this code to caategory when need code!!!!!!!
-            val ring: MediaPlayer = MediaPlayer.create(this, R.raw.sound)
-            ring.start()
 
 
 
 
             //update userName to input fields text
             userName = binding.etName.text.toString()
+            profilePic = imageUri.toString()
+
 
             //validation: check if name has been entered
 
             if (userName == "") {
 
                 //TODO: add colour if not entered : textbox
-
 
                 // create toast message
                 val toast = Toast.makeText(
@@ -80,6 +82,16 @@ class MainActivity : AppCompatActivity() {
             } else {
                 println(userName)
 
+                //navigate to next activity using intent
+                val intent = Intent(this, categories::class.java)
+
+                //pass data to our next activity
+                intent.putExtra(Constant.username, userName)
+                intent.putExtra(Constant.profilepic, profilePic)
+
+                startActivity(intent)
+                finish() //removes current activity from stack
+
                 //TODO : navigate to next activity
             }
         }
@@ -88,12 +100,17 @@ class MainActivity : AppCompatActivity() {
 
     //show profilepic
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        var photo = null
+        var imageurl = null
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data
             imageView.setImageURI(imageUri)
+            println("Imageuri " + imageUri)
 
-            println(imageUri)
+
+
+
         }
     }
 }
