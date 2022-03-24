@@ -26,7 +26,6 @@
         android:id="@+id/btn_story"
         android:layout_width="134dp"
         android:layout_height="214dp"
-
         android:layout_marginStart="2dp"
         android:layout_marginTop="9dp"
         android:layout_marginEnd="58dp"
@@ -199,6 +198,21 @@
 
     </TextView>
 
+
+    <TextView
+        android:id="@+id/tv_highscore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Highscore: "
+        android:textAlignment="center"
+        android:textColor="@color/text1"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_pfp">
+
+    </TextView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_settings"

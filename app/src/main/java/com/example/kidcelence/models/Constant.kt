@@ -6,10 +6,12 @@ object Constant {
 
 
     public val username = "USERNAME"
+    public val finalscore = "FINALSCORE"
     public val profilepic = "PROFILEPIC"
     public val selectquestion = "SELECTQUESTION"
     public val currentQuestion = "CURRENTQUESTION"
     public val currentScore = "CURRENTSCORE"
+
 
     fun CategoryOneQuestions(): ArrayList<Question>{
 
@@ -19,8 +21,8 @@ object Constant {
         //create q
 val queOne = Question(
     1,
-    "What animal is this sound from   1?",
-    R.raw.sound,
+    "What animal makes this sound?",
+    R.raw.sound1,
     "Cow",
     "Chicken",
     "Pig",
@@ -29,47 +31,47 @@ val queOne = Question(
 )
 
 val queTwo = Question(
-    1,
-    "What animal is this sound from   2?",
-    R.drawable.animalimg,
-    "Cow",
-    "Chicken",
-    "Pig",
-    "Sheep",
-    "Cow"
+    2,
+    "What animal makes this sound?",
+    R.raw.sound2,
+    "Dog",
+    "Cat",
+    "Guinea Pig",
+    "Rabbit",
+    "Cat"
 )
 
 val queThree = Question(
-    1,
-    "What animal is this sound from   3 ?",
-    R.drawable.animalimg,
-    "Cow",
-    "Chicken",
-    "Pig",
-    "Sheep",
-    "Cow"
+    3,
+    "What animal makes this sound?",
+    R.raw.sound3,
+    "Elephant",
+    "Lion",
+    "Wolf",
+    "Turkey",
+    "Lion"
 )
 
 val queFour = Question(
-    1,
-    "What animal is this sound from   4?",
-    R.drawable.animalimg,
-    "Cow",
-    "Chicken",
-    "Pig",
-    "Sheep",
-    "Cow"
+    4,
+    "What animal makes this sound?",
+    R.raw.sound4,
+    "Zebra",
+    "Rhino",
+    "Elephant",
+    "Giraffe",
+    "Elephant"
 )
 
 val queFive = Question(
-    1,
-    "What animal is this sound from   5?",
-    R.drawable.animalimg,
-    "Cow",
-    "Chicken",
-    "Pig",
+    5,
+    "What animal makes this sound?",
+    R.raw.sound5,
+    "Duck",
     "Sheep",
-    "Cow"
+    "Mouse",
+    "Donkey",
+    "Donkey"
 )
 
 
@@ -85,65 +87,65 @@ val queFive = Question(
     }
 
 
-    fun CategoryTwoQuestions(): ArrayList<Question>{
+    fun CategoryTwoQuestions(): ArrayList<QuestionPattern>{
 
         //init question array
-        var cat2Questions = ArrayList<Question>()
+        var cat2Questions = ArrayList<QuestionPattern>()
 
         //create q
-        val queOne = Question(
+        val queOne = QuestionPattern(
             1,
-            "Pattern1?",
-            R.drawable.patternimg,
-            "square",
-            "circle",
-            "triangle",
-            "hexagon",
-            "square"
+            "Complete the pattern?",
+            R.drawable.pattern1,
+            R.drawable.apattern14,
+            R.drawable.apattern12,
+            R.drawable.apattern11,
+            R.drawable.apattern13,
+            R.drawable.apattern11
         )
 
-        val queTwo = Question(
-            1,
-            "Pattern2?",
-            R.drawable.patternimg,
-            "square",
-            "circle",
-            "triangle",
-            "hexagon",
-            "square"
+        val queTwo = QuestionPattern(
+            2,
+            "Complete the pattern??",
+            R.drawable.pattern2,
+            R.drawable.apattern13,
+            R.drawable.apattern12,
+            R.drawable.apattern14,
+            R.drawable.apattern11,
+            R.drawable.apattern14
         )
 
-        val queThree = Question(
-            1,
-            "Pattern3?",
-            R.drawable.patternimg,
-            "square",
-            "circle",
-            "triangle",
-            "hexagon",
-            "square"
+        val queThree = QuestionPattern(
+            3,
+            "Complete the pattern??",
+            R.drawable.pattern3,
+            R.drawable.apattern13,
+            R.drawable.apattern12,
+            R.drawable.apattern11,
+            R.drawable.apattern14,
+            R.drawable.apattern13
         )
 
-        val queFour = Question(
-            1,
-            "Pattern4?",
-            R.drawable.patternimg,
-            "square",
-            "circle",
-            "triangle",
-            "hexagon",
-            "square"
+        val queFour = QuestionPattern(
+            4,
+            "Complete the pattern??",
+            R.drawable.pattern4,
+            R.drawable.apattern11,
+            R.drawable.apattern14,
+            R.drawable.apattern13,
+            R.drawable.apattern12,
+            R.drawable.apattern12
         )
 
-        val queFive = Question(
-            1,
-            "Pattern5?",
-            R.drawable.patternimg,
-            "square",
-            "circle",
-            "triangle",
-            "hexagon",
-            "square"
+        val queFive = QuestionPattern(
+            5,
+            "Complete the pattern??",
+            R.drawable.pattern5,
+            R.drawable.apattern11,
+            R.drawable.apattern13,
+            R.drawable.apattern12,
+            R.drawable.apattern14,
+            R.drawable.apattern13
         )
 
 
@@ -168,57 +170,57 @@ val queFive = Question(
         //create q
         val queOne = Question(
             1,
-            "math1?",
-            R.drawable.mathimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            "How many legs do you see?",
+            R.drawable.math1,
+            "8",
+            "10",
+            "16",
+            "24",
+            "16"
         )
 
         val queTwo = Question(
-            1,
-            "math2?",
-            R.drawable.mathimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            2,
+            "What is the answer?",
+            R.drawable.math2,
+            "33",
+            "35",
+            "36",
+            "38",
+            "35"
         )
 
         val queThree = Question(
-            1,
-            "math3?",
-            R.drawable.mathimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            3,
+            "What is the answer?",
+            R.drawable.math3,
+            "25",
+            "30",
+            "35",
+            "38",
+            "30"
         )
 
         val queFour = Question(
-            1,
-            "math4?",
-            R.drawable.mathimg,
-            "1",
-            "2",
-            "3",
+            4,
+            "What is the answer?",
+            R.drawable.math4,
             "4",
-            "1"
+            "6",
+            "7",
+            "8",
+            "6"
         )
 
         val queFive = Question(
-            1,
-            "math5?",
-            R.drawable.mathimg,
-            "1",
-            "2",
-            "3",
+            5,
+            "What is the answer?",
+            R.drawable.math5,
             "4",
-            "1"
+            "3",
+            "6",
+            "5",
+            "3"
         )
 
 
@@ -242,57 +244,57 @@ val queFive = Question(
         //create q
         val queOne = Question(
             1,
-            "story1?",
-            R.drawable.storyimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            "George saved all his money in his_____",
+            R.drawable.storyq1,
+            "Wallet",
+            "Piggy bank",
+            "Bank",
+            "Locker",
+            "Piggy bank"
         )
 
         val queTwo = Question(
-            1,
-            "story2?",
-            R.drawable.storyimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            2,
+            "He then decided to buy himself a _____",
+            R.drawable.storyq2,
+            "Dog",
+            "Cat",
+            "Goldfish",
+            "Guinea Pig",
+            "Dog"
         )
 
         val queThree = Question(
-            1,
-            "story3?",
-            R.drawable.storyimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            3,
+            "He wanted to teach his dog some ____",
+            R.drawable.storyq3,
+            "Manners",
+            "Tricks",
+            "Words",
+            "Command",
+            "Tricks"
         )
 
         val queFour = Question(
-            1,
-            "story4?",
-            R.drawable.storyimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            4,
+            "George then rewarded Pablo with a ____",
+            R.drawable.storyq4,
+            "Carrot",
+            "Sweets",
+            "Biscuit",
+            "Bone",
+            "Bone"
         )
 
         val queFive = Question(
-            1,
-            "story5?",
-            R.drawable.storyimg,
-            "1",
-            "2",
-            "3",
-            "4",
-            "1"
+            5,
+            "George built Pablo a ____",
+            R.drawable.storyq5,
+            "Tent",
+            "Dog Cage",
+            "Dog House",
+            "Kennel",
+            "Dog House"
         )
 
 

@@ -10,3 +10,15 @@ data class Question(
     val optionFour: String,
     val answer: String
 )
+
+
+data class QuestionPattern(
+    val id: Int,
+    val question: String,
+    val icon: Int,
+    val optionOne: Int,
+    val optionTwo: Int,
+    val optionThree: Int,
+    val optionFour: Int,
+    val answer: Int
+)

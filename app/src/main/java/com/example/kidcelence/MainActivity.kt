@@ -1,7 +1,10 @@
 package com.example.kidcelence
 
+import android.content.Context
+import android.content.ContextWrapper
 import android.content.Intent
-import android.media.MediaPlayer
+import android.graphics.Bitmap
+import android.icu.text.SimpleDateFormat
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
@@ -12,6 +15,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.kidcelence.databinding.ActivityMainBinding
 import com.example.kidcelence.models.Constant
 import java.io.File
+import java.io.FileOutputStream
+import java.io.IOException
+import java.lang.System.out
 
 
 class MainActivity : AppCompatActivity() {
@@ -66,6 +72,21 @@ class MainActivity : AppCompatActivity() {
             profilePic = imageUri.toString()
 
 
+            val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
+           val editor = sharedPref.edit()
+
+            editor.apply{
+                putString(Constant.profilepic, profilePic)
+
+                apply() //commit() - saves the prefrences
+            }
+
+
+//1. SharedPref -profile img set in die main activity, kyk of op categories uri werk van daar af
+//2. Internal Media Storage
+//https://developer.android.com/training/data-storage/shared/media
+
+
             //validation: check if name has been entered
 
             if (userName == "") {
@@ -98,6 +119,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     //show profilepic
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         var photo = null
@@ -105,9 +127,22 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data
+            val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
+           val intent = Intent(this, categories::class.java)
+
+            //pass data to our next activity
+           intent.putExtra(Constant.profilepic, bitmap)
+
+           // startActivity(intent)
+          //  finish() //removes current activity from stack
+
+
+            //TODO:save imageuri as shared prefrences en ook stuur na maion page deur intent
+            //victory sound expand op sound
+
             imageView.setImageURI(imageUri)
             println("Imageuri " + imageUri)
-
+            println("bitmap " + bitmap)
 
 
 

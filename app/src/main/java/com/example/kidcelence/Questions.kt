@@ -1,5 +1,6 @@
 package com.example.kidcelence
 
+import android.R
 import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -7,9 +8,9 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kidcelence.databinding.ActivityQuestionsBinding
-
 import com.example.kidcelence.models.Constant
 import java.util.*
+
 
 class Questions : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class Questions : AppCompatActivity() {
 
         //Get the username from previous activity
         val userName = intent?.extras?.getString(Constant.username).toString()
-
+        //val profilePic = intent?.extras?.getString(Constant.profilepic).toString()
         //Get the number of category selected
         val questionNumber = intent?.extras?.getString(Constant.selectquestion).toString()
 
@@ -33,9 +34,19 @@ class Questions : AppCompatActivity() {
         Log.d("currentscore", currentScore.toString())
 
 
+
+
+
+
+
         if (questionNumber == "1") {
             var questions = Constant.CategoryOneQuestions()
             var question = questions[currentQuestion!! - 1]
+
+
+            binding.pbProgress.progress = question.id
+
+
 
             title = "Question " + question.id
             binding.tvQuestiontext.setText(question.question)
@@ -45,7 +56,6 @@ class Questions : AppCompatActivity() {
             binding.btnOption4.setText(question.optionFour)
 
             binding.btnPlay.setVisibility(View.VISIBLE)
-
 
 
 
@@ -79,12 +89,14 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                          //  intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
                             startActivity(intent)
                             finish()
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -101,6 +113,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -108,8 +121,9 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
-                            // pass the score of the user to next question
+                             //pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
                             intent.putExtra(Constant.selectquestion, questionNumber)
                             startActivity(intent)
@@ -128,6 +142,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -135,6 +150,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -151,6 +167,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           //intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -158,6 +175,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -178,6 +196,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -185,6 +204,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -201,6 +221,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -208,6 +229,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -228,6 +250,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -235,6 +258,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -251,6 +275,7 @@ class Questions : AppCompatActivity() {
                             val intent = Intent(this, points::class.java)
                             //add username and current score to results
                             intent.putExtra(Constant.username, userName)
+                          //  intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentScore, currentScore)
 
                             startActivity(intent)
@@ -258,6 +283,7 @@ class Questions : AppCompatActivity() {
                         } else {
                             val intent = Intent(this, Questions::class.java)
                             intent.putExtra(Constant.username, userName)
+                           // intent.putExtra(Constant.profilepic, profilePic)
                             intent.putExtra(Constant.currentQuestion, nextQuestion)
                             // pass the score of the user to next question
                             intent.putExtra(Constant.currentScore, currentScore)
@@ -275,17 +301,20 @@ class Questions : AppCompatActivity() {
             var questions = Constant.CategoryTwoQuestions()
             var question = questions[currentQuestion!! - 1]
 
+            binding.pbProgress.progress = question.id
+
             title = "Question " + question.id
             binding.tvQuestiontext.setText(question.question)
             binding.ivQuestion.setImageResource(question.icon)
-            binding.btnOption1.setText(question.optionOne)
-            binding.btnOption2.setText(question.optionTwo)
-            binding.btnOption3.setText(question.optionThree)
-            binding.btnOption4.setText(question.optionFour)
-
+            binding.btnOption1.setBackgroundResource(question.optionOne)
+            binding.btnOption2.setBackgroundResource(question.optionTwo)
+            binding.btnOption3.setBackgroundResource(question.optionThree)
+            binding.btnOption4.setBackgroundResource(question.optionFour)
+            binding.btnOption1.setText("")
+            binding.btnOption2.setText("")
+            binding.btnOption3.setText("")
+            binding.btnOption4.setText("")
             binding.btnPlay.setVisibility(View.GONE)
-
-
 
 
 
@@ -298,12 +327,14 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
                         startActivity(intent)
                         finish()
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -320,6 +351,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                        //intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -327,6 +359,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -347,6 +380,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -354,6 +388,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -370,6 +405,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -377,6 +413,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -397,6 +434,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -404,6 +442,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                        //intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -420,6 +459,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -427,6 +467,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -447,6 +488,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -454,6 +496,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -470,6 +513,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -477,6 +521,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -492,7 +537,7 @@ class Questions : AppCompatActivity() {
 
             var questions = Constant.CategoryThreeQuestions()
             var question = questions[currentQuestion!! - 1]
-
+            binding.pbProgress.progress = question.id
             title = "Question " + question.id
             binding.tvQuestiontext.setText(question.question)
             binding.ivQuestion.setImageResource(question.icon)
@@ -516,12 +561,14 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                        //intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
                         startActivity(intent)
                         finish()
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       //intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -538,6 +585,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -545,6 +593,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -565,6 +614,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -572,6 +622,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -588,6 +639,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -595,6 +647,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -615,6 +668,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -622,6 +676,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -638,6 +693,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -645,6 +701,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -665,6 +722,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -672,6 +730,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -688,6 +747,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -695,6 +755,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -712,7 +773,7 @@ class Questions : AppCompatActivity() {
 
             var questions = Constant.CategoryFourQuestions()
             var question = questions[currentQuestion!! - 1]
-
+            binding.pbProgress.progress = question.id
             title = "Question " + question.id
             binding.tvQuestiontext.setText(question.question)
             binding.ivQuestion.setImageResource(question.icon)
@@ -736,12 +797,14 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
                         startActivity(intent)
                         finish()
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -758,6 +821,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -765,6 +829,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -785,6 +850,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -792,6 +858,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -808,6 +875,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -815,6 +883,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                     //   intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -835,6 +904,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                     //   intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -842,6 +912,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -858,6 +929,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -865,6 +937,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                     //   intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -885,6 +958,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -892,6 +966,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
@@ -908,6 +983,7 @@ class Questions : AppCompatActivity() {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
                         intent.putExtra(Constant.username, userName)
+                      //  intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentScore, currentScore)
 
                         startActivity(intent)
@@ -915,6 +991,7 @@ class Questions : AppCompatActivity() {
                     } else {
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
+                       // intent.putExtra(Constant.profilepic, profilePic)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
                         // pass the score of the user to next question
                         intent.putExtra(Constant.currentScore, currentScore)
