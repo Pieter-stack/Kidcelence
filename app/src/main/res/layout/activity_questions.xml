@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Questions"
-    android:background="@color/yellow">
+    android:background="@color/yellow"
+    android:id="@+id/background">
 
 
     <androidx.cardview.widget.CardView
@@ -14,7 +15,8 @@
         android:layout_height="430dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/white">
 
 
         <ProgressBar
@@ -129,8 +131,8 @@
 
     <TextView
         android:id="@+id/tv_questiontext"
-        android:layout_width="match_parent"
-        android:layout_height="87dp"
+        android:layout_width="289dp"
+        android:layout_height="88dp"
         android:layout_marginBottom="120dp"
         android:text="Hey there! Whats your name?"
         android:textAlignment="center"
@@ -139,7 +141,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/iv_questionblock"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cardView">
 
 

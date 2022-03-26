@@ -15,25 +15,23 @@ import androidx.core.net.toUri
 import com.example.kidcelence.databinding.ActivityPointsBinding
 import com.example.kidcelence.databinding.ActivityQuestionsBinding
 import com.example.kidcelence.models.Constant
+import com.google.android.material.imageview.ShapeableImageView
 
 class points : AppCompatActivity() {
 
     private lateinit var binding: ActivityPointsBinding
 
-
-    lateinit var imageView: ImageView
-    private val pickImage = 100
-    private var imageUri: Uri? = null
-    val profilePic = intent?.extras?.getString(Constant.profilepic).toString()
-
+    lateinit var imageView: ShapeableImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPointsBinding.inflate(layoutInflater)
         val view = binding.root
 
+
+
         setContentView(view)
 
-
+        imageView = findViewById(R.id.shape_Profile)
         var username = intent?.extras?.getString(Constant.username).toString()
 
         var finalScore = intent.getIntExtra(Constant.currentScore, 0)
@@ -42,13 +40,13 @@ class points : AppCompatActivity() {
         var currentscore = finalScore * 100
 
         if (finalScore > questionCounts / 2) {
-            binding.tvWell.setText("Well Done" + "," + username + "!")
+            binding.tvWell.setText("Well Done " + ", " + username + "!")
             binding.tvScore.setText(finalScore.toString() + "/" + questionCounts.toString())
             binding.tvPoints.setText("You just scored " + " " + currentscore.toString() + " " + " points!")
 
 
         } else {
-            binding.tvWell.setText("Awww better luck next time " + ", " + username + "!")
+            binding.tvWell.setText("Awww better luck next time " + " , " + username + "!")
             binding.tvScore.setText(finalScore.toString() + "/" + questionCounts.toString())
             binding.tvPoints.setText("You just scored " + " " + currentscore.toString() + " " + " points!")
         }
@@ -56,9 +54,6 @@ class points : AppCompatActivity() {
 
 
 
-
-        imageView = findViewById(R.id.shape_Profile)
-        val gallery = Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
 
 
 
@@ -95,32 +90,10 @@ class points : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        var photo = null
-        var imageurl = null
-        super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == RESULT_OK && requestCode == pickImage) {
-            imageUri = profilePic.toUri()
-            val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
-            val intent = Intent(this, categories::class.java)
-
-            //pass data to our next activity
-            intent.putExtra(Constant.profilepic, bitmap)
-
-            // startActivity(intent)
-            //  finish() //removes current activity from stack
-
-
-            //TODO:save imageuri as shared prefrences en ook stuur na maion page deur intent
-            //victory sound expand op sound
-
-            //imageView.setImageURI(imageUri)
-             binding.shapeProfile.setImageURI(imageUri)
-            println("Imageuri " + imageUri)
-            println("bitmap " + bitmap)
-
-
-        }
+        imageView.setImageURI(Uri.parse(Constant.getProfileImage(this )))
+        super.onStart()
     }
-}
+
+    }

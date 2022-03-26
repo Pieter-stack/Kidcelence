@@ -12,33 +12,48 @@
         android:id="@+id/materialButton"
         android:layout_width="match_parent"
         android:layout_height="480dp"
-        android:layout_marginTop="252dp"
         android:background="@drawable/backgroundcategory"
+        android:clickable="false"
         app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:clickable="false">
+        app:layout_constraintVertical_bias="0.992"
+        tools:ignore="SpeakableTextPresentCheck">
 
     </com.google.android.material.button.MaterialButton>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/test"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck">
+
+    </com.google.android.material.button.MaterialButton>
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_story"
         android:layout_width="134dp"
         android:layout_height="214dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="58dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/story"
+        android:paddingBottom="180dp"
         android:text="Let's Explore"
         android:textColor="@color/text1"
         android:textSize="10dp"
-        android:paddingBottom="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/pink"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_math"
-        app:layout_constraintTop_toBottomOf="@+id/btn_pattern">
+        app:layout_constraintBottom_toBottomOf="@+id/materialButton"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintStart_toStartOf="@+id/materialButton">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -46,19 +61,19 @@
         android:id="@+id/btn_math"
         android:layout_width="134dp"
         android:layout_height="214dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/maths"
+        android:paddingBottom="180dp"
         android:text="Maths"
         android:textColor="@color/text1"
         android:textSize="10dp"
-        android:paddingBottom="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/yellow"
-        app:layout_constraintEnd_toStartOf="@+id/btn_story"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_sound">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintStart_toStartOf="@+id/materialButton">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -66,23 +81,22 @@
         android:id="@+id/btn_sound"
         android:layout_width="134dp"
         android:layout_height="214dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/animal"
+        android:paddingTop="180dp"
         android:text="Animal sounds"
         android:textColor="@color/text1"
         android:textSize="10dp"
-        android:paddingTop="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/lightpurple"
-        app:layout_constraintBottom_toTopOf="@+id/btn_story"
-        app:layout_constraintEnd_toStartOf="@+id/btn_pattern"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.53">
+        app:layout_constraintBottom_toTopOf="@+id/btn_math"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintStart_toStartOf="@+id/materialButton"
+        app:layout_constraintTop_toTopOf="@+id/materialButton"
+        app:layout_constraintVertical_bias="0.0">
 
 
     </com.google.android.material.button.MaterialButton>
@@ -91,21 +105,22 @@
         android:id="@+id/btn_pattern"
         android:layout_width="134dp"
         android:layout_height="214dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="278dp"
-        android:layout_marginEnd="58dp"
-        android:layout_marginBottom="9dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/pattern"
+        android:paddingTop="180dp"
         android:text="Patterns"
         android:textColor="@color/text1"
         android:textSize="10dp"
-        android:paddingTop="180dp"
         android:textStyle="bold"
         app:backgroundTint="@color/lightblue"
-        app:layout_constraintBottom_toTopOf="@+id/btn_math"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_sound"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintBottom_toTopOf="@+id/btn_story"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintStart_toStartOf="@+id/materialButton"
+        app:layout_constraintTop_toTopOf="@+id/materialButton"
+        app:layout_constraintVertical_bias="0.0">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -113,35 +128,37 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="84dp"
         android:src="@drawable/animalimg"
         android:translationZ="5dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_sound"
-        app:layout_constraintTop_toTopOf="@+id/materialButton">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btn_sound"
+        app:layout_constraintTop_toTopOf="@+id/btn_sound">
 
     </ImageView>
 
-
     <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
 
-        android:layout_marginTop="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
         android:src="@drawable/patternimg"
         android:translationZ="5dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_pattern"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/btn_pattern"
         app:layout_constraintTop_toTopOf="@+id/btn_pattern">
 
     </ImageView>
 
-
     <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="wrap_content"
+
+
         android:layout_height="wrap_content"
-
-
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="52dp"
         android:src="@drawable/mathimg"
         android:translationZ="5dp"
         app:layout_constraintEnd_toEndOf="@+id/btn_math"
@@ -151,19 +168,22 @@
 
     </ImageView>
 
+
     <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
+
+
         android:layout_height="wrap_content"
-
-
         android:layout_marginTop="24dp"
         android:src="@drawable/storyimg"
         android:translationZ="5dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_story"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btn_story"
         app:layout_constraintTop_toTopOf="@+id/btn_story">
 
     </ImageView>
-
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_pfp"
@@ -176,7 +196,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@color/pink"
-        android:scaleType="fitXY"
+            android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/circleImageView" />
 
 

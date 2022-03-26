@@ -27,7 +27,6 @@ class setting : AppCompatActivity() {
 
         //Get the username from previous activity
         val userName = intent?.extras?.getString(Constant.username).toString()
-        val profilePic = intent?.extras?.getString(Constant.profilepic).toString()
 
 
 

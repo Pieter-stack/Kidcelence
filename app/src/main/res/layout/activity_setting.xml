@@ -4,8 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".setting">
+    tools:context=".setting"
+    android:background="@color/white">
 
+
+    //TODO:new player
 
     <ImageView
         android:id="@+id/imageView"
@@ -71,8 +74,8 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="337dp"
+        android:layout_height="192dp"
         android:layout_marginTop="152dp"
         android:text="Kidcelence is a fun interactive android mobile app designed and developed for delevoping children to enhance early childhood development. This app uses Sensory awarenes, Cognition, Speech and Language to help the child through their development stage."
         android:textAlignment="center"

@@ -1,5 +1,7 @@
 package com.example.kidcelence
 
+import android.Manifest
+import android.accounts.AccountManager.get
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -8,29 +10,36 @@ import android.icu.text.SimpleDateFormat
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.provider.Settings
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kidcelence.databinding.ActivityMainBinding
 import com.example.kidcelence.models.Constant
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
-import java.lang.System.out
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.DexterBuilder
+import com.karumi.dexter.MultiplePermissionsReport
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.multi.DialogOnAnyDeniedMultiplePermissionsListener.Builder.withContext
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener
+import com.karumi.dexter.listener.single.DialogOnDeniedPermissionListener.Builder.withContext
 
 
 class MainActivity : AppCompatActivity() {
 
     //binding varible which will be the generated activity of our xml
     private lateinit var binding: ActivityMainBinding
+    lateinit var dexter : DexterBuilder
 
 //pfp variables declare
     lateinit var imageView: ImageView
     lateinit var button: Button
     private val pickImage = 100
     private var imageUri: Uri? = null
-
 
     //on create function
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +50,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
 
         setContentView(view)
-
+//        Constant.setProfileImage(this,"")
     // find imageview and btn by id
         imageView = findViewById(R.id.shape_Profile)
         button = findViewById(R.id.btn_Image)
         button.setOnClickListener {
-            // pick image from gallery
-            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            startActivityForResult(gallery, pickImage)
+            getPermission()
         }
 
 
@@ -56,9 +63,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
         var userName: String = ""
-        var profilePic: String = ""
 
         //on btn click listener
         binding.btnSubmit.setOnClickListener {
@@ -69,17 +74,10 @@ class MainActivity : AppCompatActivity() {
 
             //update userName to input fields text
             userName = binding.etName.text.toString()
-            profilePic = imageUri.toString()
 
 
-            val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
-           val editor = sharedPref.edit()
 
-            editor.apply{
-                putString(Constant.profilepic, profilePic)
 
-                apply() //commit() - saves the prefrences
-            }
 
 
 //1. SharedPref -profile img set in die main activity, kyk of op categories uri werk van daar af
@@ -104,11 +102,11 @@ class MainActivity : AppCompatActivity() {
                 println(userName)
 
                 //navigate to next activity using intent
+                Constant.setUserName(this,userName)
                 val intent = Intent(this, categories::class.java)
 
                 //pass data to our next activity
-                intent.putExtra(Constant.username, userName)
-                intent.putExtra(Constant.profilepic, profilePic)
+              //  intent.putExtra(Constant.username, userName)
 
                 startActivity(intent)
                 finish() //removes current activity from stack
@@ -119,6 +117,11 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onStart() {
+
+        imageView.setImageURI(Uri.parse(Constant.getProfileImage(this )))
+        super.onStart()
+    }
 
     //show profilepic
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -127,11 +130,10 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data
-            val bitmap = MediaStore.Images.Media.getBitmap(this.contentResolver, imageUri)
            val intent = Intent(this, categories::class.java)
 
             //pass data to our next activity
-           intent.putExtra(Constant.profilepic, bitmap)
+
 
            // startActivity(intent)
           //  finish() //removes current activity from stack
@@ -141,13 +143,41 @@ class MainActivity : AppCompatActivity() {
             //victory sound expand op sound
 
             imageView.setImageURI(imageUri)
+            // store userprofile image in sharedPreferances
+            Constant.setProfileImage(this, imageUri.toString())
+
             println("Imageuri " + imageUri)
-            println("bitmap " + bitmap)
+
 
 
 
         }
     }
+    private fun getPermission() {
+        Dexter.withContext(this)
+            .withPermissions(
+                android.Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ).withListener(object : MultiplePermissionsListener {
+                override fun onPermissionsChecked(report: MultiplePermissionsReport) {
+                    report.let {
+
+                        if (!report.areAllPermissionsGranted()) {
+                            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+                            startActivityForResult(gallery, pickImage)
+                        }
+
+                    }
+                }
+
+                override fun onPermissionRationaleShouldBeShown(permissions: List<PermissionRequest?>?, token: PermissionToken?) {
+                    token?.continuePermissionRequest()
+                }
+            }).withErrorListener{
+                Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
+            }.check()
+    }
+
 }
 
 

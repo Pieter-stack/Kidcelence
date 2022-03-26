@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.example.kidcelence.databinding.ActivityCategoriesBinding
@@ -16,9 +17,10 @@ class categories : AppCompatActivity() {
 
     //binding varible which will be the generated activity of our xml
     private lateinit var binding: ActivityCategoriesBinding
-
+    lateinit var imageView: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //bind our activity to the root of this xml file
         //bind our activity to the root of this xml file
         binding = ActivityCategoriesBinding.inflate(layoutInflater)
         val view = binding.root
@@ -26,28 +28,34 @@ class categories : AppCompatActivity() {
         setContentView(view)
 
         //Get the username from previous activity
-        val userName = intent?.extras?.getString(Constant.username).toString()
-        val profilePic = intent?.extras?.getString(Constant.profilepic).toString()
-       println("profile pic -----------------" + profilePic)
+            //intent?.extras?.getString(Constant.username).toString()
+        val userName = Constant.getUserName(this)
         //add username on activity
         binding.tvName.setText("Hi there excelent "+ userName)
 
         val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        var Highscore = sharedPref.getString(Constant.finalscore, "No user")
+        var Highscore = sharedPref.getString(Constant.finalscore, "0")
 
 
         binding.tvHighscore.setText("Highscore: " + Highscore)
 
+        imageView = findViewById(R.id.iv_pfp)
 
 
 
 
+binding.test.setOnClickListener {
 
-        val FILENAME = "profilePic"
-       // val PATH = "/mnt/sdcard/$FILENAME"
-        val f = File(FILENAME)
-        val yourUri: Uri = Uri.fromFile(f)
+
+
+    Constant.setUserName(this,"")
+    Constant.setProfileImage(this,"")
+    val intent = Intent(this, MainActivity::class.java)
+    //pass through username to question activity\
+    startActivity(intent)
+    finish()
+}
 
 
 
@@ -55,7 +63,6 @@ class categories : AppCompatActivity() {
 //https://stackoverflow.com/questions/15662258/how-to-save-a-bitmap-on-internal-storage
 //https://www.tutorialspoint.com/how-to-write-an-image-file-in-internal-storage-in-android
         //TODO: help me pls
-      binding.ivPfp.setImageURI(profilePic.toUri())
      // file dir   content://media/external/images/media/31
         //https://stackoverflow.com/questions/37540779/android-gallery-picker-and-camera-intent-crashes-upon-onactivityresult
 
@@ -74,7 +81,6 @@ class categories : AppCompatActivity() {
         binding.cvSettings.setOnClickListener{
             val intent = Intent(this, setting::class.java)
             intent.putExtra(Constant.username, userName)
-            intent.putExtra(Constant.profilepic, profilePic)
             startActivity(intent)
         }
 
@@ -89,7 +95,6 @@ class categories : AppCompatActivity() {
             val intent = Intent(this, Questions::class.java)
             //pass through username to question activity
             intent.putExtra(Constant.username, userName)
-            intent.putExtra(Constant.profilepic, profilePic)
             intent.putExtra(Constant.selectquestion, question)
             startActivity(intent)
             finish()
@@ -105,7 +110,6 @@ class categories : AppCompatActivity() {
            val intent = Intent(this, Questions::class.java)
            //pass through username to question activity
            intent.putExtra(Constant.username, userName)
-            intent.putExtra(Constant.profilepic, profilePic)
             intent.putExtra(Constant.selectquestion, question)
            startActivity(intent)
            finish()
@@ -119,7 +123,6 @@ class categories : AppCompatActivity() {
            val intent = Intent(this, Questions::class.java)
            //pass through username to question activity
            intent.putExtra(Constant.username, userName)
-            intent.putExtra(Constant.profilepic, profilePic)
             intent.putExtra(Constant.selectquestion, question)
            startActivity(intent)
            finish()
@@ -133,12 +136,17 @@ class categories : AppCompatActivity() {
            val intent = Intent(this, Questions::class.java)
            //pass through username to question activity
            intent.putExtra(Constant.username, userName)
-            intent.putExtra(Constant.profilepic, profilePic)
             intent.putExtra(Constant.selectquestion, question)
            startActivity(intent)
            finish()
         }
 
+    }
+
+    override fun onStart() {
+
+        imageView.setImageURI(Uri.parse(Constant.getProfileImage(this )))
+        super.onStart()
     }
 
 

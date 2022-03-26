@@ -1,16 +1,24 @@
 package com.example.kidcelence.models
 
+import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
+import android.preference.PreferenceManager
 import com.example.kidcelence.R
+import android.content.Context.MODE_PRIVATE
+
+
+
 
 object Constant {
 
 
     public val username = "USERNAME"
     public val finalscore = "FINALSCORE"
-    public val profilepic = "PROFILEPIC"
     public val selectquestion = "SELECTQUESTION"
     public val currentQuestion = "CURRENTQUESTION"
     public val currentScore = "CURRENTSCORE"
+    public val userProfile = "USERPROFILE"
 
 
     fun CategoryOneQuestions(): ArrayList<Question>{
@@ -308,6 +316,41 @@ val queFive = Question(
 
         return cat4Questions
     }
+
+    fun getProfileImage( context: Context): String{
+        val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        return sharedPref.getString(userProfile, "").toString()
+    }
+
+    fun setProfileImage( context: Context , profile :String){
+        val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
+        //opens the file and edit it
+        editor.apply{
+            putString(userProfile, profile)
+
+            apply() //commit() - saves the prefrences
+        }
+    }
+
+    fun getUserName( context: Context): String{
+        val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        return sharedPref.getString(username, "").toString()
+    }
+
+    fun setUserName( context: Context , profile :String){
+        val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+        val editor = sharedPref.edit()
+
+        //opens the file and edit it
+        editor.apply{
+            putString(username, profile)
+
+            apply() //commit() - saves the prefrences
+        }
+    }
+
 
 
 
