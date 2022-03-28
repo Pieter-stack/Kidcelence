@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
     </style>
 
     <style name="circleImageView" parent="">
@@ -21,4 +22,5 @@
     <style name="Accent">
         <item name="colorAccent">@color/purple</item> <!-- Whatever color you want-->
     </style>
+
 </resources>

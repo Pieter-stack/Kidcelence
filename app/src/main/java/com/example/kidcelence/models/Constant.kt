@@ -1,13 +1,9 @@
 package com.example.kidcelence.models
 
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import android.util.Log
 import com.example.kidcelence.R
-import android.content.Context.MODE_PRIVATE
-
-
+import kotlin.random.Random
 
 
 object Constant {
@@ -15,10 +11,18 @@ object Constant {
 
     public val username = "USERNAME"
     public val finalscore = "FINALSCORE"
+    public val catOnescore = "CATONESCORE"
+    public val catTwoscore = "CATTWOSCORE"
+    public val catThreescore = "CATTHREESCORE"
+    public val catFourscore ="CATFOURSCORE"
     public val selectquestion = "SELECTQUESTION"
     public val currentQuestion = "CURRENTQUESTION"
     public val currentScore = "CURRENTSCORE"
     public val userProfile = "USERPROFILE"
+
+
+
+
 
 
     fun CategoryOneQuestions(): ArrayList<Question>{
@@ -82,12 +86,14 @@ val queFive = Question(
     "Donkey"
 )
 
-
         cat1Questions.add(queOne)
         cat1Questions.add(queTwo)
         cat1Questions.add(queThree)
         cat1Questions.add(queFour)
         cat1Questions.add(queFive)
+
+
+       // cat1Questions.shuffle()
 
 
 
@@ -350,6 +356,7 @@ val queFive = Question(
             apply() //commit() - saves the prefrences
         }
     }
+
 
 
 

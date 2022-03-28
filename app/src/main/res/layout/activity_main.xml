@@ -15,7 +15,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/logo"
-
+        android:elevation="6dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></ImageView>
 
@@ -25,7 +25,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
-        android:background="@color/lightpurple"
+        android:background="@color/pink"
        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,9 +38,35 @@
         android:layout_height="60dp"
         android:layout_marginStart="156dp"
         android:layout_marginTop="140dp"
+        android:backgroundTint="@color/lightpurple"
+        android:elevation="6dp"
+        android:shadowColor="@color/text1"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         app:cornerRadius="50dp"
+
         app:layout_constraintStart_toStartOf="@+id/shape_Profile"
-        app:layout_constraintTop_toTopOf="@+id/shape_Profile" />
+        app:layout_constraintTop_toTopOf="@+id/shape_Profile">
+
+
+    </com.google.android.material.button.MaterialButton>
+
+    <ImageView
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@color/pink"
+        android:src="@drawable/ic_outline_add_a_photo_24"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_Image"
+        app:layout_constraintEnd_toEndOf="@+id/btn_Image"
+        app:layout_constraintStart_toStartOf="@+id/btn_Image"
+        app:layout_constraintTop_toTopOf="@+id/btn_Image">
+
+
+    </ImageView>
 
     <TextView
         android:id="@+id/textView"

@@ -25,17 +25,6 @@
 
     </com.google.android.material.button.MaterialButton>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/test"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="SpeakableTextPresentCheck">
-
-    </com.google.android.material.button.MaterialButton>
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_story"
@@ -189,14 +178,14 @@
         android:id="@+id/iv_pfp"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="155dp"
         android:layout_marginTop="51dp"
+        android:background="@color/pink"
         android:backgroundTint="@color/pink"
+        android:scaleType="centerCrop"
         app:cardCornerRadius="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/pink"
-            android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/circleImageView" />
 
 
@@ -245,6 +234,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="match_parent"
+
+android:layout_marginTop="3dp"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/ic_baseline_settings_24"
+            android:translationZ="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/btn_story"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_story"
+            app:layout_constraintTop_toTopOf="@+id/btn_story">
+
+        </ImageView>
+
     </androidx.cardview.widget.CardView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

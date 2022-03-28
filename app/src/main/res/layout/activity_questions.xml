@@ -13,10 +13,11 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="430dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/white">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <ProgressBar
@@ -24,9 +25,9 @@
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="10px"
-            android:theme="@style/Accent"
             android:max="5"
             android:progress="1"
+            android:theme="@style/Accent"
 
             >
 
@@ -37,15 +38,17 @@
         android:id="@+id/btn_option2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="32dp"
-        app:backgroundTint="@color/lightblue"
-        app:layout_constraintBottom_toTopOf="@+id/btn_option4"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="58dp"
         android:text="Hello"
-        android:textSize="20dp"
         android:textColor="@color/text1"
-        app:cornerRadius="10dp">
+        android:textSize="20dp"
+        app:backgroundTint="@color/lightblue"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_option1"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.060000002">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -53,17 +56,22 @@
         android:id="@+id/btn_option1"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        app:backgroundTint="@color/lightpurple"
-        app:layout_constraintBottom_toTopOf="@+id/btn_option3"
-        app:layout_constraintEnd_toStartOf="@+id/btn_option2"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="58dp"
+        android:elevation="6dp"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="10"
         android:text="Hello"
-        android:textSize="20dp"
         android:textColor="@color/text1"
-        app:cornerRadius="10dp">
+        android:textSize="20dp"
+        app:backgroundTint="@color/lightpurple"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.060000002">
 
 
     </com.google.android.material.button.MaterialButton>
@@ -73,15 +81,17 @@
         android:id="@+id/btn_option4"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginEnd="42dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp"
-        app:backgroundTint="@color/pink"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="Hello"
-        android:textSize="20dp"
         android:textColor="@color/text1"
-        app:cornerRadius="10dp">
+        android:textSize="20dp"
+        app:backgroundTint="@color/pink"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_option3"
+        app:layout_constraintTop_toBottomOf="@+id/btn_option2">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -89,17 +99,18 @@
         android:id="@+id/btn_option3"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp"
-        app:backgroundTint="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_option4"
-        app:layout_constraintStart_toStartOf="parent"
         android:text="Hello"
-        android:textSize="20dp"
         android:textColor="@color/text1"
-        app:cornerRadius="10dp">
+        android:textSize="20dp"
+        app:backgroundTint="@color/yellow"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_option1">
 
     </com.google.android.material.button.MaterialButton>
 
@@ -108,9 +119,9 @@
         android:id="@+id/iv_questionblock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="40dp"
         android:src="@drawable/cards"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -121,8 +132,8 @@
         android:id="@+id/iv_question"
         android:layout_width="303dp"
         android:layout_height="131dp"
-        android:layout_marginStart="52dp"
         android:layout_marginTop="92dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 

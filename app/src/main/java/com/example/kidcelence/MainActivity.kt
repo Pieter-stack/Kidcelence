@@ -17,6 +17,9 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.kidcelence.databinding.ActivityMainBinding
 import com.example.kidcelence.models.Constant
 import com.karumi.dexter.Dexter
@@ -48,9 +51,8 @@ class MainActivity : AppCompatActivity() {
         //bind our activity to the root of this xml file
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-
+        hideSystemBars()
         setContentView(view)
-//        Constant.setProfileImage(this,"")
     // find imageview and btn by id
         imageView = findViewById(R.id.shape_Profile)
         button = findViewById(R.id.btn_Image)
@@ -59,17 +61,10 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
-
-
         var userName: String = ""
 
         //on btn click listener
         binding.btnSubmit.setOnClickListener {
-
-
-
 
 
             //update userName to input fields text
@@ -77,19 +72,9 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
-
-
-//1. SharedPref -profile img set in die main activity, kyk of op categories uri werk van daar af
-//2. Internal Media Storage
-//https://developer.android.com/training/data-storage/shared/media
-
-
             //validation: check if name has been entered
 
             if (userName == "") {
-
-                //TODO: add colour if not entered : textbox
 
                 // create toast message
                 val toast = Toast.makeText(
@@ -106,12 +91,9 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, categories::class.java)
 
                 //pass data to our next activity
-              //  intent.putExtra(Constant.username, userName)
 
                 startActivity(intent)
                 finish() //removes current activity from stack
-
-                //TODO : navigate to next activity
             }
         }
 
@@ -138,9 +120,6 @@ class MainActivity : AppCompatActivity() {
            // startActivity(intent)
           //  finish() //removes current activity from stack
 
-
-            //TODO:save imageuri as shared prefrences en ook stuur na maion page deur intent
-            //victory sound expand op sound
 
             imageView.setImageURI(imageUri)
             // store userprofile image in sharedPreferances
@@ -177,12 +156,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
             }.check()
     }
-
+    private fun hideSystemBars() {
+        val windowInsetsController =
+            ViewCompat.getWindowInsetsController(window.decorView) ?: return
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
+    }
 }
-
-
-//pfp
-//https://www.tutorialspoint.com/how-to-pick-an-image-from-an-image-gallery-on-android-using-kotlin
-
-//get sound
-//https://abhiandroid.com/androidstudio/add-audio-android-studio.html

@@ -8,6 +8,9 @@ import android.provider.MediaStore
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import com.example.kidcelence.databinding.ActivityCategoriesBinding
 import com.example.kidcelence.models.Constant
 import java.io.File
@@ -21,14 +24,11 @@ class categories : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //bind our activity to the root of this xml file
-        //bind our activity to the root of this xml file
         binding = ActivityCategoriesBinding.inflate(layoutInflater)
         val view = binding.root
-
+        hideSystemBars()
         setContentView(view)
 
-        //Get the username from previous activity
-            //intent?.extras?.getString(Constant.username).toString()
         val userName = Constant.getUserName(this)
         //add username on activity
         binding.tvName.setText("Hi there excelent "+ userName)
@@ -41,41 +41,6 @@ class categories : AppCompatActivity() {
         binding.tvHighscore.setText("Highscore: " + Highscore)
 
         imageView = findViewById(R.id.iv_pfp)
-
-
-
-
-binding.test.setOnClickListener {
-
-
-
-    Constant.setUserName(this,"")
-    Constant.setProfileImage(this,"")
-    val intent = Intent(this, MainActivity::class.java)
-    //pass through username to question activity\
-    startActivity(intent)
-    finish()
-}
-
-
-
-
-//https://stackoverflow.com/questions/15662258/how-to-save-a-bitmap-on-internal-storage
-//https://www.tutorialspoint.com/how-to-write-an-image-file-in-internal-storage-in-android
-        //TODO: help me pls
-     // file dir   content://media/external/images/media/31
-        //https://stackoverflow.com/questions/37540779/android-gallery-picker-and-camera-intent-crashes-upon-onactivityresult
-
-
-
-//maybe add 4 variables wat jy 1 kan sit op sekere categories om the wys daai category is selected
-
-
-
-
-
-
-
 
 
         binding.cvSettings.setOnClickListener{
@@ -141,6 +106,16 @@ binding.test.setOnClickListener {
            finish()
         }
 
+    }
+
+    private fun hideSystemBars() {
+        val windowInsetsController =
+            ViewCompat.getWindowInsetsController(window.decorView) ?: return
+        // Configure the behavior of the hidden system bars
+        windowInsetsController.systemBarsBehavior =
+            WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        // Hide both the status bar and the navigation bar
+        windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
     }
 
     override fun onStart() {
