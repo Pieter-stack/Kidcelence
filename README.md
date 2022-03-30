@@ -1,20 +1,17 @@
 <!-- PROJECT LOGO -->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/dylandasilva1999/spacify-app?color=%23f37723)
-![GitHub watchers](https://img.shields.io/github/watchers/dylandasilva1999/spacify-app?color=%23f37723)
-![GitHub language count](https://img.shields.io/github/languages/count/dylandasilva1999/spacify-app?color=%23f37723)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dylandasilva1999/spacify-app?color=%23f37723)
-[![LinkedIn][linkedin-shield]][linkedin-url]
-[![Instagram][instagram-shield]][instagram-url]
-[![Behance][behance-shield]][behance-url]
+![GitHub repo size](https://img.shields.io/github/repo-size/Pieter-stack/Kidcelence?color=purple)
+![GitHub watchers](https://img.shields.io/github/watchers/Pieter-stack/Kidcelence?color=yellow)
+![GitHub language count](https://img.shields.io/github/languages/count/Pieter-stack/Kidcelence?color=pink)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pieter-stack/Kidcelence?color=blue)
 
 <h6 align="center">Pieter Venter Android Introduction 301</h6>
 <p align="center">
 </br>
    
   <a href="https://github.com/Pieter-stack/Kidcelence">
-    <img src="Images/AppIcon.png" alt="Logo" width="140" height="140">
+    <img src="Images/Icon.png" alt="Logo" width="140" height="140">
   </a>
   
   <h3 align="center">Kidcelence</h3>
@@ -112,7 +109,7 @@ Use `File` : `Open` in Android Studio.
 
 ### Splash screen
 
-![image8][image8]
+![image10][image10]
 
 See the splash screen when you open up the app
 
@@ -124,25 +121,25 @@ You can also change the name and profile picture when you reset the user
 
 ### Select any of the 4 categories.
 
-![image3][image3]
+![image4][image4]
 
-????????????????????????????????
+Choose any of the 4 categories to improve your score and be above the rest
 
 ### Answer Questions
 
-![image4][image4]
+![image3][image3]
 
 AImprove your highscore when you answer questions correct
 
 ### See your results
 
-![image5][image5]
+![image6][image6]
 
 After answering all the questions from that category see your personal best and how many points you scored
 
 ### Reset the user and High score in the settings page
 
-![image6][image6]
+![image5][image5]
 
 You can reset the high score and user anytime through the settings
 
@@ -166,15 +163,15 @@ The `Conceptual Process` is the set of actions, activities and research that was
 
 ### Ideation
 
-![image9][image9]
+![image7][image7]
 
 ### Wireframes
 
-![image10][image10]
+![image8][image8]
 
 ### User-flow
 
-![image11][image11]
+![image9][image9]
 
 <!-- DEVELOPMENT PROCESS -->
 ## Development Process
@@ -211,7 +208,7 @@ The `Reviews and Testing` consists of `google forms`, as well as if there were p
 
 ### Mockups
 
-![image12][image12]
+![image11][image11]
 
 <!-- VIDEO DEMONSTRATION -->
 ## Video Demonstration
@@ -281,7 +278,6 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 [image8]: Images/Image8.png
 [image9]: Images/Image9.png
 [image10]: Images/Image10.png
-[image11]: Images/Image11.png
-[image12]: Images/Image12.jpg
+[image11]: Images/Mockup6.png
 
  
