@@ -21,8 +21,10 @@ class categories : AppCompatActivity() {
     //binding varible which will be the generated activity of our xml
     private lateinit var binding: ActivityCategoriesBinding
     lateinit var imageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         //bind our activity to the root of this xml file
         binding = ActivityCategoriesBinding.inflate(layoutInflater)
         val view = binding.root
@@ -107,7 +109,7 @@ class categories : AppCompatActivity() {
         }
 
     }
-
+//Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return
@@ -117,7 +119,7 @@ class categories : AppCompatActivity() {
         // Hide both the status bar and the navigation bar
         windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
     }
-
+//get image
     override fun onStart() {
 
         imageView.setImageURI(Uri.parse(Constant.getProfileImage(this )))

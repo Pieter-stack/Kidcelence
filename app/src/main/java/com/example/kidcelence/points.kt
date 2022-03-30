@@ -36,25 +36,26 @@ class points : AppCompatActivity() {
 
         setContentView(view)
         hideSystemBars()
+        //Get variables from Constant
         imageView = findViewById(R.id.shape_Profile)
         var username = intent?.extras?.getString(Constant.username).toString()
         val questionNumber = intent?.extras?.getString(Constant.selectquestion).toString()
         var finalScore = intent.getIntExtra(Constant.currentScore, 0)
         var questionCounts = Constant.CategoryOneQuestions().count()
 
-
+        //local storage
         val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-
+        //insert Constant variables into new variables to use later
         var ScoreOne = sharedPref.getString(Constant.catOnescore, "0")
         var ScoreTwo = sharedPref.getString(Constant.catTwoscore, "0")
         var ScoreThree = sharedPref.getString(Constant.catThreescore, "0")
         var ScoreFour = sharedPref.getString(Constant.catFourscore, "0")
 
-        println("bhnabnhwdbnawuiduiawndhj" + questionNumber)
 
+        //See what category we are on
         if (questionNumber == "1") {
-
+            //hide content and only show category one content
             binding.btnLeftONE.setVisibility(View.VISIBLE)
             binding.btnRightONE.setVisibility(View.VISIBLE)
             binding.btnLeftTWO.setVisibility(View.GONE)
@@ -64,25 +65,28 @@ class points : AppCompatActivity() {
             binding.btnLeftFOUR.setVisibility(View.GONE)
             binding.btnRightFOUR.setVisibility(View.GONE)
 
+
+            //see if highscore has been set or not
 if(ScoreOne == "null"){
-    ScoreOne = finalScore.toString()
+    ScoreOne = finalScore.toString() //if highscore has not been set / set to 0
 }
 
-
+//see if last score is better than previous highscore
 if(finalScore > ScoreOne!!.toInt()){
     editor.apply{
-        putString(Constant.catOnescore, finalScore.toString())
+        putString(Constant.catOnescore, finalScore.toString()) //if new score is better update highscore
 
         apply() //commit() - saves the prefrences
     }
     binding.tvHighscore.setVisibility(View.VISIBLE)
-    binding.tvBest.setText("Personal best: " + finalScore +"/5")
+    binding.tvBest.setText("Personal best: " + finalScore +"/5") //if new score is better show message you beaten previous score
 }else{
-    binding.tvBest.setText("Personal best: " + ScoreOne +"/5")
+    binding.tvBest.setText("Personal best: " + ScoreOne +"/5")//if highscore is not beaten show previous best
     binding.tvHighscore.setVisibility(View.GONE)
 }
-
+            //see what category you are on
         }else if (questionNumber == "2") {
+            //hide content and only show category two content
             binding.btnLeftONE.setVisibility(View.GONE)
             binding.btnRightONE.setVisibility(View.GONE)
             binding.btnLeftTWO.setVisibility(View.VISIBLE)
@@ -92,15 +96,15 @@ if(finalScore > ScoreOne!!.toInt()){
             binding.btnLeftFOUR.setVisibility(View.GONE)
             binding.btnRightFOUR.setVisibility(View.GONE)
 
-
+            //see if highscore has been set or not
             if(ScoreTwo == "null"){
-                ScoreTwo = finalScore.toString()
+                ScoreTwo = finalScore.toString()//if highscore has not been set / set to 0
             }
 
-
+//see if last score is better than previous highscore
             if(finalScore > ScoreTwo!!.toInt()){
                 editor.apply{
-                    putString(Constant.catTwoscore, finalScore.toString())
+                    putString(Constant.catTwoscore, finalScore.toString())//if new score is better update highscore
 
                     apply() //commit() - saves the prefrences
                 }
@@ -111,8 +115,9 @@ if(finalScore > ScoreOne!!.toInt()){
                 binding.tvHighscore.setVisibility(View.GONE)
             }
 
-
+            //see what category you are on
         }else if (questionNumber == "3") {
+            //hide content and only show category three content
             binding.btnLeftONE.setVisibility(View.GONE)
             binding.btnRightONE.setVisibility(View.GONE)
             binding.btnLeftTWO.setVisibility(View.GONE)
@@ -122,15 +127,15 @@ if(finalScore > ScoreOne!!.toInt()){
             binding.btnLeftFOUR.setVisibility(View.GONE)
             binding.btnRightFOUR.setVisibility(View.GONE)
 
-
+            //see if highscore has been set or not
             if(ScoreThree == "null"){
-                ScoreThree = finalScore.toString()
+                ScoreThree = finalScore.toString()//if highscore has not been set / set to 0
             }
 
-
+//see if last score is better than previous highscore
             if(finalScore > ScoreThree!!.toInt()){
                 editor.apply{
-                    putString(Constant.catThreescore, finalScore.toString())
+                    putString(Constant.catThreescore, finalScore.toString())//if new score is better update highscore
 
                     apply() //commit() - saves the prefrences
                 }
@@ -142,8 +147,9 @@ if(finalScore > ScoreOne!!.toInt()){
             }
 
 
-
+            //see what category you are on
         }else if (questionNumber == "4") {
+            //hide content and only show category four content
             binding.btnLeftONE.setVisibility(View.GONE)
             binding.btnRightONE.setVisibility(View.GONE)
             binding.btnLeftTWO.setVisibility(View.GONE)
@@ -153,15 +159,15 @@ if(finalScore > ScoreOne!!.toInt()){
             binding.btnLeftFOUR.setVisibility(View.VISIBLE)
             binding.btnRightFOUR.setVisibility(View.VISIBLE)
 
-
+            //see if highscore has been set or not
             if(ScoreFour == "null"){
-                ScoreOne = finalScore.toString()
+                ScoreOne = finalScore.toString()//if highscore has not been set / set to 0
             }
 
-
+//see if last score is better than previous highscore
             if(finalScore > ScoreFour!!.toInt()){
                 editor.apply{
-                    putString(Constant.catFourscore, finalScore.toString())
+                    putString(Constant.catFourscore, finalScore.toString())//if new score is better update highscore
 
                     apply() //commit() - saves the prefrences
                 }
@@ -179,9 +185,9 @@ if(finalScore > ScoreOne!!.toInt()){
 
 
 
-
+            //points system
         var currentscore = finalScore * 100
-
+            //see if user scored better than half / if so then say well done else better luck next time
         if (finalScore > questionCounts / 2) {
             binding.tvWell.setText("Well Done" + ", " + username + "!")
             binding.tvScore.setText(finalScore.toString() + "/" + questionCounts.toString())
@@ -221,19 +227,19 @@ if(finalScore > ScoreOne!!.toInt()){
         binding.btnHome.setOnClickListener {
             val intent = Intent(this, categories::class.java)
             intent.putExtra(Constant.username, username)
-            //TODO: save to device storage
             startActivity(intent)
             finish()
         }
 
 
     }
-
+        //Get profile picture
     override fun onStart() {
 
         imageView.setImageURI(Uri.parse(Constant.getProfileImage(this )))
         super.onStart()
     }
+    //Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return

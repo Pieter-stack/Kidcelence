@@ -132,6 +132,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+    //get permissions
     private fun getPermission() {
         Dexter.withContext(this)
             .withPermissions(
@@ -148,7 +149,7 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 }
-
+                    //permision gotten get image Uri
                 override fun onPermissionRationaleShouldBeShown(permissions: List<PermissionRequest?>?, token: PermissionToken?) {
                     token?.continuePermissionRequest()
                 }
@@ -156,6 +157,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, it.name, Toast.LENGTH_SHORT).show()
             }.check()
     }
+    //Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return

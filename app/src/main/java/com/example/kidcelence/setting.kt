@@ -31,16 +31,17 @@ class setting : AppCompatActivity() {
         //Get the username from previous activity
         val userName = intent?.extras?.getString(Constant.username).toString()
 
-
+        //button to reset user
         binding.btnReset.setOnClickListener {
 
-            Constant.setUserName(this,"")
-            Constant.setProfileImage(this,"")
-            val intent = Intent(this, MainActivity::class.java)
+            Constant.setUserName(this,"")//reset username
+            Constant.setProfileImage(this,"")//reset profile picture
+            val intent = Intent(this, MainActivity::class.java)//navigate to main page
             //pass through username to question activity\
             val sharedPref = getSharedPreferences("myPref", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()
             editor.apply{
+                //reset scores
                 putString(Constant.finalscore, "0")
                 putString(Constant.catOnescore, "0")
                 putString(Constant.catTwoscore, "0")
@@ -55,7 +56,7 @@ class setting : AppCompatActivity() {
             finish()
         }
 
-
+    //button to reset scores
 binding.btnSubmit.setOnClickListener{
 
 
@@ -65,6 +66,7 @@ binding.btnSubmit.setOnClickListener{
 
     //opens the file and edit it
     editor.apply{
+        //reset scores
         putString(Constant.finalscore, "0")
         putString(Constant.catOnescore, "0")
         putString(Constant.catTwoscore, "0")
@@ -89,7 +91,7 @@ binding.btnSubmit.setOnClickListener{
 
 
     }
-
+//Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return

@@ -16,7 +16,7 @@ class SplasScreen : AppCompatActivity() {
         setContentView(R.layout.activity_splas_screen)
         hideSystemBars()
         Handler().postDelayed({
-            if( Constant.getUserName(this).equals("")){
+            if( Constant.getUserName(this).equals("")){ //see if username set if set go directly to category page
                 val intent = Intent(this@SplasScreen, MainActivity::class.java)
                 startActivity(intent)
                 finish()
@@ -32,6 +32,7 @@ class SplasScreen : AppCompatActivity() {
 
 
 }
+    //Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return

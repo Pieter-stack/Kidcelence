@@ -41,17 +41,19 @@ class Questions : AppCompatActivity() {
 
 
 
-
+        //See what question you are on
         if (questionNumber == "1") {
+
+            //Style question
             binding.background.setBackgroundColor(Color.rgb(100, 108, 222))
             var questions = Constant.CategoryOneQuestions()
             var question = questions[currentQuestion!! - 1]
 
-
+            //Progress bar update
             binding.pbProgress.progress = question.id
 
 
-
+            //set questions up to display
             title = "Question " + question.id
             binding.tvQuestiontext.setText(question.question)
             binding.btnOption1.setText(question.optionOne)
@@ -61,7 +63,7 @@ class Questions : AppCompatActivity() {
 
             binding.btnPlay.setVisibility(View.VISIBLE)
 
-
+            //Use Meadiaplayer to play animal sound
             val ring: MediaPlayer = MediaPlayer.create(this, question.icon)
 
             binding.btnPlay.setOnClickListener {
@@ -82,14 +84,15 @@ class Questions : AppCompatActivity() {
 
 
             }
+            //Play sound once before you can press button to rehear it
             ring.start()
 
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption1.setOnClickListener {
                 if (question.optionOne == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -98,7 +101,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else { //navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -112,7 +115,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -121,7 +124,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -134,12 +137,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption2.setOnClickListener {
                 if (question.optionTwo == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -148,7 +151,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -162,7 +165,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -171,7 +174,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -184,12 +187,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption3.setOnClickListener {
                 if (question.optionThree == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -198,7 +201,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -212,7 +215,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -221,7 +224,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -234,12 +237,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption4.setOnClickListener {
                 if (question.optionFour == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -248,7 +251,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -262,7 +265,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -271,7 +274,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -307,12 +310,12 @@ class Questions : AppCompatActivity() {
             binding.btnOption4.setText("")
             binding.btnPlay.setVisibility(View.GONE)
 
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption1.setOnClickListener {
                 if (question.optionOne == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -321,7 +324,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -335,7 +338,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -344,7 +347,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -357,12 +360,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption2.setOnClickListener {
                 if (question.optionTwo == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -371,7 +374,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -385,7 +388,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -394,7 +397,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -407,12 +410,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption3.setOnClickListener {
                 if (question.optionThree == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -421,7 +424,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -435,7 +438,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -444,7 +447,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -457,12 +460,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption4.setOnClickListener {
                 if (question.optionFour == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -471,7 +474,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -485,7 +488,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -494,7 +497,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -527,12 +530,12 @@ class Questions : AppCompatActivity() {
 
 
 
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption1.setOnClickListener {
                 if (question.optionOne == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -541,7 +544,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -555,7 +558,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -564,7 +567,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -577,12 +580,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption2.setOnClickListener {
                 if (question.optionTwo == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -591,7 +594,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -605,7 +608,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -614,7 +617,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -627,12 +630,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption3.setOnClickListener {
                 if (question.optionThree == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -641,7 +644,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -655,7 +658,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -664,7 +667,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -677,12 +680,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption4.setOnClickListener {
                 if (question.optionFour == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -691,7 +694,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -705,7 +708,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -714,7 +717,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -748,12 +751,12 @@ class Questions : AppCompatActivity() {
 
 
 
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption1.setOnClickListener {
                 if (question.optionOne == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -762,7 +765,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -776,7 +779,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -785,7 +788,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -798,12 +801,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption2.setOnClickListener {
                 if (question.optionTwo == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -812,7 +815,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -826,7 +829,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -835,7 +838,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -848,12 +851,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption3.setOnClickListener {
                 if (question.optionThree == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -862,7 +865,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -876,7 +879,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -885,7 +888,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -898,12 +901,12 @@ class Questions : AppCompatActivity() {
 
                 }
             }
-
+            //See what button is pressed and if that button contains correct answer
             binding.btnOption4.setOnClickListener {
                 if (question.optionFour == question.answer) {
                     currentScore = currentScore!! + 1
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -912,7 +915,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -926,7 +929,7 @@ class Questions : AppCompatActivity() {
                 } else {
 
                     var nextQuestion = currentQuestion!! + 1
-
+                    //if end of questions navigate to points page
                     if (nextQuestion > questions.count()) {
                         val intent = Intent(this, points::class.java)
                         //add username and current score to results
@@ -935,7 +938,7 @@ class Questions : AppCompatActivity() {
                         intent.putExtra(Constant.selectquestion, questionNumber)
                         startActivity(intent)
                         finish()
-                    } else {
+                    } else {//navigate to questions page with new question
                         val intent = Intent(this, Questions::class.java)
                         intent.putExtra(Constant.username, userName)
                         intent.putExtra(Constant.currentQuestion, nextQuestion)
@@ -953,6 +956,7 @@ class Questions : AppCompatActivity() {
         }
 
     }
+    //Full screen
     private fun hideSystemBars() {
         val windowInsetsController =
             ViewCompat.getWindowInsetsController(window.decorView) ?: return

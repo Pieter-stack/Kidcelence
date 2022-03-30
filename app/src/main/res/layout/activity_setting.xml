@@ -24,35 +24,20 @@
     </ImageView>
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Developer:"
-        android:textAlignment="center"
-        android:textColor="@color/text1"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toStartOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.941"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </TextView>
-
-    <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="108dp"
         android:layout_marginBottom="8dp"
-        android:text="Pieter Venter"
+        android:text="Developer: Pieter Venter"
         android:textAlignment="center"
         android:textColor="@color/text1"
         android:textSize="16dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit"
+        app:layout_constraintVertical_bias="1.0">
 
     </TextView>
 
@@ -75,13 +60,16 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="377dp"
+        android:layout_width="wrap_content"
         android:layout_height="178dp"
+        android:paddingRight="20dp"
         android:layout_marginTop="88dp"
+        android:paddingLeft="20dp"
         android:text="Kidcelence is a fun interactive android mobile app designed and developed for delevoping children to enhance early childhood development. This app uses Sensory awarenes, Cognition, Speech and Language to help the child through their development stage."
         android:textAlignment="center"
         android:textColor="@color/text1"
         android:textSize="16dp"
+
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

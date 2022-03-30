@@ -322,7 +322,7 @@ val queFive = Question(
 
         return cat4Questions
     }
-
+//Get and set profile picture
     fun getProfileImage( context: Context): String{
         val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
         return sharedPref.getString(userProfile, "").toString()
@@ -339,7 +339,7 @@ val queFive = Question(
             apply() //commit() - saves the prefrences
         }
     }
-
+//Get and set username
     fun getUserName( context: Context): String{
         val sharedPref = context.getSharedPreferences("myPref", Context.MODE_PRIVATE)
         return sharedPref.getString(username, "").toString()
