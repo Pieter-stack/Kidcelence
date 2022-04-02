@@ -53,7 +53,6 @@
    * [Future Implementation](#future-implementation)
 * [Final Outcome](#final-outcome)
    * [Mockups](#mockups)
-   * [Video Demonstration](#video-demonstration)
    * [Promotional Video](#promotional-video)
 * [Roadmap](#roadmap)
 * [Contributing](#contributing)
@@ -210,19 +209,12 @@ The `Reviews and Testing` consists of `google forms`, as well as if there were p
 
 ![image11][image11]
 
-<!-- VIDEO DEMONSTRATION -->
-## Video Demonstration
-
-To see a run through of the application, click below:
-
-[View Demonstration](link)
-
 <!-- PROMO VIDEO -->
 ## Promotional Video
 
 To see the promotional video, click below:
 
-[View Promotional Video](link)
+[View Promotional Video](https://youtu.be/bE_zQGm_tHk)
 
 <!-- ROADMAP -->
 ## Roadmap
